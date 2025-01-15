@@ -58,7 +58,7 @@ const DataTable = <T extends Record<string, any>>({
       setRowsPerPage(newRowsPerPage);
       setCurrentPage(1);
       setLoading(false);
-    }, 500);
+    }, 1000);
   };
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {

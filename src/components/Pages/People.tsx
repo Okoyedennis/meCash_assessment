@@ -6,7 +6,7 @@ const People = () => {
   const data = Array.from({ length: 10000 }, (_, i) => ({
     id: i + 1,
     name: `People ${i + 1}`,
-    email: `poeople${i + 1}@example.com`,
+    email: `people${i + 1}@example.com`,
   }));
 
   const columns = [

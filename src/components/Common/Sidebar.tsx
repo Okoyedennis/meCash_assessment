@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import {
-  MdKeyboardArrowRight,
-  MdOutlineKeyboardArrowDown,
-} from "react-icons/md";
+import { Link } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaCar } from "react-icons/fa";
-import { BiLink } from "react-icons/bi";
 import { IoIosPeople } from "react-icons/io";
 // import logo from "../../../assets/Logo-Main2.png";
 
@@ -106,7 +102,7 @@ const Sidebar = () => {
       </div>
       <nav className="py-4 px-1 md:px-1">
         <ul>
-          {SidebarData.map(({ title, path, icon, children }, index) => (
+          {SidebarData.map(({ title, path, icon }, index) => (
             <li
               className="transition-colors duration-300 mt-[.5rem]"
               key={index}>
@@ -115,66 +111,23 @@ const Sidebar = () => {
                   toggleChildren[index] ? "bg-primary_disabled" : ""
                 }`}
                 onClick={() => toggleSidebarChildren(index)}>
-                {children ? (
-                  <>
-                    <div
-                      className={`flex items-center gap-2 
-                  ${
-                    toggleChildren[index]
-                      ? "text-white"
-                      : "text-primary_disabled"
-                  }p
-                  `}>
-                      <div className="text-center text-2xl">{icon}</div>
-                      <span className="origin-left duration-200 text-sm md:text-[15px] leading-[24px] font-medium">
-                        {title}
-                      </span>
-                    </div>
-                    <MdOutlineKeyboardArrowDown
-                      className={`text-xl ${
-                        toggleChildren[index] ? "text-white" : " rotate-180"
-                      }`}
-                    />
-                  </>
-                ) : (
-                  <div className="parent">
-                    <NavLink
-                      to={path}
-                      className={`flex items-center gap-2 
+                <div className="parent">
+                  <Link
+                    to={path}
+                    className={`flex items-center gap-2 
                   ${
                     toggleChildren[index]
                       ? "text-white"
                       : "text-primary_disabled"
                   }
                   `}>
-                      <div className="text-center text-2xl">{icon}</div>
-                      <span className="origin-left duration-200 text-sm md:text-[15px] leading-[24px] font-medium">
-                        {title}
-                      </span>
-                    </NavLink>
-                  </div>
-                )}
+                    <div className="text-center text-2xl">{icon}</div>
+                    <span className="origin-left duration-200 text-sm md:text-[15px] leading-[24px] font-medium">
+                      {title}
+                    </span>
+                  </Link>
+                </div>
               </div>
-              {children && toggleChildren[index] && (
-                <ul className="children">
-                  {children.map((child, indexTwo) => (
-                    <li
-                      key={indexTwo}
-                      className="transition-colors duration-300">
-                      <NavLink
-                        to={child.path}
-                        className="flex rounded-md cursor-pointer text-Acc1 items-center w-full justify-between text-primary_disabled px-[16px] py-[10px]">
-                        <div className="flex items-center justify-between gap-2">
-                          <BiLink className="text-center text-2xl text-transparent" />
-                          <span className="self-center text-sm font-medium leading-[19.12px]">
-                            {child.title}
-                          </span>
-                        </div>
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </li>
           ))}
         </ul>
