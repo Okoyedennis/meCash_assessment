@@ -23,7 +23,7 @@ Ensure you have the following installed on your machine:
 ### Installation
 
 1. Clone the repository:
-   git clone [https://github.com/your-repo-name.git](https://github.com/Okoyedennis/meCash_assessment)
+   git clone [https://github.com/Okoyedennis/meCash_assessment]
 
 2. Navigate to the project directory:
    cd meCash_assessment

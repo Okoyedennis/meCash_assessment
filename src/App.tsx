@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import People from "./components/Pages/People";
-import Cars from "./components/Pages/Cars";
+import People from "./Pages/People";
+import Cars from "./Pages/Cars";
+
 
 const App = () => {
   return (

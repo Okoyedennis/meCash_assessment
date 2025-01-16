@@ -1,6 +1,7 @@
-import Layout from "../Common/Layout";
-import Header from "../Common/Header";
-import DataTable from "../DataTable/DataTable";
+import Header from "../components/Common/Header";
+import Layout from "../components/Common/Layout";
+import DataTable from "../components/DataTable/DataTable";
+
 
 const Cars = () => {
   const data = Array.from({ length: 10000 }, (_, i) => ({
